@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="container">
+    <button class="btn" id="complimentButton">Get a compliment</button>
+    <button class="btn" id="fortune-button">Get a fortune</button>
+    <br />
+
+    <form>
+      <input type="text" id="make" placeholder="Make" />
+      <input
+        type="text"
+        id="model"
+        placeholder="Model"
+      />
+      <input type="text" id="year" placeholder="Year" />
+      <input type="text" id="price" placeholder="Price" />
+
+      <button>add car</button>
+    </form>
+
+    <section id="cars-container"></section>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
