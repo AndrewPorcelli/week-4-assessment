@@ -51,9 +51,20 @@ module.exports = {
     console.log(req.params.id);
     let index = cars.findIndex((elem) => elem.id === +req.params.id);
     console.log(cars[index].id);
-    console.log(index);
-    console.log(cars.splice(index, 1));
+    cars.splice(index, 1);
     res.status(200).send(cars);
-    ;
+  },
+  updateCar: (req, res) => {
+    const { type } = req.body;
+    let index = cars.findIndex((elem) => elem.id === +req.params.id);
+
+    console.log(type);
+    if (type === "minus" && cars[index].price > 0) {
+      cars[index].price -= 1000;
+      res.status(200).send(cars);
+    } else if (type === "plus" && cars[index].price >= 0) {
+      cars[index].price += 1000;
+      res.status(200).send(cars);
+    }
   },
 };

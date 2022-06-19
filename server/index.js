@@ -12,11 +12,13 @@ const {
   getFortune,
   createCar,
   deleteCar,
+  updateCar,
 } = require("./controller");
 
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
 app.post("/api/car/", createCar);
 app.delete("/api/car/:id", deleteCar);
+app.put("/api/car/:id", updateCar);
 
 app.listen(4000, () => console.log("Server running on 4000"));

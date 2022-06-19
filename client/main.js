@@ -7,10 +7,17 @@ const form = document.querySelector("form");
 // Callbacks
 const carCallback = ({ data: cars }) => displayCars(cars);
 
-const createCarInput = (body) =>
+const createCarInput = (body) => {
   axios.post("http://localhost:4000/api/car", body).then(carCallback);
+};
 
-  const deleteCar = id => axios.delete(`http://localhost:4000/api/car/${id}`).then(carCallback)
+const deleteCar = (id) => {
+  axios.delete(`http://localhost:4000/api/car/${id}`).then(carCallback);
+};
+
+const updateCar = (id, type) => {
+  axios.put(`http://localhost:4000/api/car/${id}`, { type }).then(carCallback);
+};
 
 // Axios functions
 const getCompliment = () => {
@@ -52,8 +59,8 @@ function submitHandler(e) {
 
   make.value = "";
   model.value = "";
-  year.value = '';
-  price.value = '';
+  year.value = "";
+  price.value = "";
 }
 
 // year: dropdown selector, price = input.value (will have plus, minus button), make = input.value, model = input.value, maybe add an img?
