@@ -1,6 +1,7 @@
 // Elements
 const complimentBtn = document.getElementById("complimentButton");
 const fortuneBtn = document.querySelector("#fortune-button");
+const somethingBtn = document.querySelector("#something-button");
 const bodyContainer = document.querySelector("#cars-container");
 const form = document.querySelector("form");
 
@@ -36,6 +37,12 @@ function getFortune() {
 
     // console.log(document.location.host);
     // console.log(document.location.pathname);
+    alert(res.data);
+  });
+}
+
+function getSomething() {
+  axios.get("http://localhost:4000/api/something").then((res) => {
     alert(res.data);
   });
 }
@@ -90,3 +97,4 @@ function displayCars(arr) {
 complimentBtn.addEventListener("click", getCompliment);
 fortuneBtn.addEventListener("click", getFortune);
 form.addEventListener("submit", submitHandler);
+somethingBtn.addEventListener("click", getSomething);

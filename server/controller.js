@@ -33,6 +33,13 @@ module.exports = {
     res.status(200).send(randomFortune);
   },
 
+  getSomething: (req, res) => {
+    const rickRoll = 'You got rick rolled!'
+
+    res.status(200).send(rickRoll)
+
+  },
+
   createCar: (req, res) => {
     const { make, model, year, price } = req.body;
     let newCar = {

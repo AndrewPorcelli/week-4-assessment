@@ -7,9 +7,10 @@
 .btn {
   height: 30px;
   width: 150px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-left: 50px;
   border: 2px solid black;
+  border-radius: 12px;
 }
 
 .show {
@@ -29,4 +30,13 @@
   display: flex;
   justify-content: left;
   margin: 5px;
+  border-radius: 12px;
 }
+
+.div-container {
+  background-color: rgb(48, 43, 43);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
