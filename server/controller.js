@@ -1,4 +1,4 @@
-let carID = 1;
+let carID = 0;
 const cars = [];
 
 module.exports = {
@@ -40,10 +40,20 @@ module.exports = {
       model,
       year,
       price: +price,
-      id: carID,
+      id: +carID,
     };
     cars.push(newCar);
     carID++;
     res.status(200).send(cars);
+    console.log(cars);
+  },
+  deleteCar: (req, res) => {
+    console.log(req.params.id);
+    let index = cars.findIndex((elem) => elem.id === +req.params.id);
+    console.log(cars[index].id);
+    console.log(index);
+    console.log(cars.splice(index, 1));
+    res.status(200).send(cars);
+    ;
   },
 };

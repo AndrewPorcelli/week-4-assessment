@@ -10,6 +10,8 @@ const carCallback = ({ data: cars }) => displayCars(cars);
 const createCarInput = (body) =>
   axios.post("http://localhost:4000/api/car", body).then(carCallback);
 
+  const deleteCar = id => axios.delete(`http://localhost:4000/api/car/${id}`).then(carCallback)
+
 // Axios functions
 const getCompliment = () => {
   axios.get("http://localhost:4000/api/compliment").then((res) => {
@@ -56,7 +58,7 @@ function submitHandler(e) {
 
 // year: dropdown selector, price = input.value (will have plus, minus button), make = input.value, model = input.value, maybe add an img?
 function createCar(newCar) {
-  const carCard = document.createElement("div");
+  let carCard = document.createElement("div");
   carCard.classList.add();
 
   carCard.innerHTML = `<p>${newCar.make} ${newCar.model}</p>
